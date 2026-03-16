@@ -305,6 +305,27 @@
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 1.5rem;
     }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.2rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid rgba(0,229,255,0.3);
+      padding: 0.4rem 0.9rem;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .project-link:hover {
+      background: rgba(0,229,255,0.08);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
     .project-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -651,6 +672,7 @@
           <span class="project-tag">PostgreSQL</span><span class="project-tag">Tableau</span>
           <span class="project-tag">SQL</span>
         </div>
+        <a href="https://github.com/NamithaPadigapati/churn-prediction-dashboard" target="_blank" class="project-link">View on GitHub ↗</a>
       </div>
 
       <div class="project-card">
@@ -662,6 +684,7 @@
           <span class="project-tag">FastAPI</span><span class="project-tag">Streamlit</span>
           <span class="project-tag">PostgreSQL</span>
         </div>
+        <a href="https://github.com/NamithaPadigapati/fraud-detection-app" target="_blank" class="project-link">View on GitHub ↗</a>
       </div>
 
       <div class="project-card">
@@ -673,6 +696,7 @@
           <span class="project-tag">SVM</span><span class="project-tag">NLP</span>
           <span class="project-tag">Speech API</span>
         </div>
+        <a href="https://github.com/NamithaPadigapati/healthcare-chatbot-nlp" target="_blank" class="project-link">View on GitHub ↗</a>
       </div>
 
       <div class="project-card">
@@ -684,6 +708,7 @@
           <span class="project-tag">Tableau</span><span class="project-tag">Pandas</span>
           <span class="project-tag">NLP</span>
         </div>
+        <a href="https://github.com/NamithaPadigapati" target="_blank" class="project-link">View GitHub ↗</a>
       </div>
 
       <div class="project-card">
@@ -695,6 +720,7 @@
           <span class="project-tag">Python</span><span class="project-tag">Tableau</span>
           <span class="project-tag">Excel</span>
         </div>
+        <a href="https://github.com/NamithaPadigapati" target="_blank" class="project-link">View GitHub ↗</a>
       </div>
 
     </div>
@@ -760,8 +786,4 @@
   </section>
 
   <footer>
-    © 2025 Namitha Padigapati — Built from scratch
-  </footer>
-
-</body>
-</html>
+    © 2025 Namitha Padigapati — 
