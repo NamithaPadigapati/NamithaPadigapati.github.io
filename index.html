@@ -820,11 +820,61 @@
     <h2 class="section-title">LET'S<br>WORK TOGETHER</h2>
     <p class="contact-sub">Open to full-time Data Analyst roles. Let's talk about your data challenges.</p>
     <div class="contact-links">
-      <a href="/cdn-cgi/l/email-protection#a2ccc3cfcbd6cac3d0c7c6c6db919b90e2c5cfc3cbce8cc1cdcf" class="contact-link">Email Me</a>
+      <a href="mailto:namithareddy392@gmail.com" class="contact-link">Email Me</a>
       <a href="https://www.linkedin.com/in/namitha-reddy-dataanalyst" target="_blank" class="contact-link">LinkedIn ↗</a>
       <a href="tel:+16023678790" class="contact-link">+1 (602) 367-8790</a>
     </div>
   </section>
 
   <footer>
-    © 2025 Namitha Padigapati — 
+    © 2025 Namitha Padigapati — Built from scratch
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var words = [
+        'Python & pandas',
+        'SQL & PostgreSQL',
+        'Tableau dashboards',
+        'Power BI reports',
+        'Machine Learning',
+        'ETL pipelines',
+        'Churn prediction',
+        'Fraud detection',
+        'NLP & spaCy',
+        'AWS & GCP',
+        'A/B Testing',
+        'Data storytelling'
+      ];
+      var wordIndex = 0;
+      var charIndex = 0;
+      var isDeleting = false;
+      var el = document.getElementById('typewriter');
+      if (!el) return;
+
+      function type() {
+        var current = words[wordIndex];
+        if (isDeleting) {
+          el.textContent = current.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          el.textContent = current.substring(0, charIndex + 1);
+          charIndex++;
+        }
+        var speed = isDeleting ? 60 : 100;
+        if (!isDeleting && charIndex === current.length) {
+          speed = 1800;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          speed = 300;
+        }
+        setTimeout(type, speed);
+      }
+      setTimeout(type, 500);
+    });
+  </script>
+
+</body>
+</html>
