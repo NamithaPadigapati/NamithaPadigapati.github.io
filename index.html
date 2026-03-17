@@ -492,39 +492,21 @@
     }
 
     /* ── TYPEWRITER ── */
-    .typewriter-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-top: 1.2rem;
-      margin-bottom: 0.3rem;
-      height: 2rem;
-    }
-    .typewriter-prefix {
-      font-family: var(--mono);
-      font-size: 0.9rem;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-    }
-    .typewriter-text {
-      font-family: var(--mono);
-      font-size: 0.9rem;
+    .tw-wrap { display:flex; align-items:center; gap:8px; margin-top:1.2rem; margin-bottom:0.2rem; min-height:2rem; }
+    .tw-prefix { font-family:var(--mono); font-size:0.88rem; color:var(--muted); letter-spacing:0.05em; }
+    .tw-word { font-family:var(--mono); font-size:0.88rem; color:var(--accent); font-weight:500; letter-spacing:0.05em; }
+    .tw-cursor { display:inline-block; width:2px; height:1rem; background:var(--accent); margin-left:1px; vertical-align:middle; animation:cur 0.8s step-end infinite; }
+    @keyframes cur { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .btn-resume {
+      background: transparent;
       color: var(--accent);
-      letter-spacing: 0.05em;
-      font-weight: 500;
+      border: 1px solid var(--accent);
     }
-    .typewriter-cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1.1rem;
-      background: var(--accent);
-      margin-left: 2px;
-      vertical-align: middle;
-      animation: blink 0.75s step-end infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+    .btn-resume:hover {
+      background: rgba(0,229,255,0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,229,255,0.2);
     }
   </style>
 </head>
@@ -549,14 +531,14 @@
     <div class="hero-glow2"></div>
     <div class="hero-tag">Available for opportunities</div>
     <h1 class="hero-name">NAMITHA<br><span>PADIGAPATI</span></h1>
-    <div class="typewriter-wrap">
-      <span class="typewriter-prefix">I specialize in</span>
-      <span class="typewriter-text" id="typewriter"></span>
-      <span class="typewriter-cursor"></span>
+    <div class="tw-wrap">
+      <span class="tw-prefix">I specialize in</span>
+      <span class="tw-word" id="tw"></span><span class="tw-cursor"></span>
     </div>
-    <p class="hero-title">Data Analyst with 3+ years turning complex datasets into decisions — across EdTech, FinTech & AI product environments.</p>
+<p class="hero-title">Data Analyst with 3+ years turning complex datasets into decisions — across EdTech, FinTech & AI product environments.</p>
     <div class="hero-ctas">
       <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="Namitha_Padigapati-Data_Analyst.pdf" download class="btn btn-resume">⬇ Download Resume</a>
       <a href="#contact" class="btn btn-ghost">Get In Touch</a>
       <a href="https://www.linkedin.com/in/namitha-reddy-dataanalyst" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
     </div>
@@ -820,7 +802,7 @@
     <h2 class="section-title">LET'S<br>WORK TOGETHER</h2>
     <p class="contact-sub">Open to full-time Data Analyst roles. Let's talk about your data challenges.</p>
     <div class="contact-links">
-      <a href="mailto:namithareddy392@gmail.com" class="contact-link">Email Me</a>
+      <a href="/cdn-cgi/l/email-protection#80eee1ede9f4e8e1f2e5e4e4f9b3b9b2c0e7ede1e9ecaee3efed" class="contact-link">Email Me</a>
       <a href="https://www.linkedin.com/in/namitha-reddy-dataanalyst" target="_blank" class="contact-link">LinkedIn ↗</a>
       <a href="tel:+16023678790" class="contact-link">+1 (602) 367-8790</a>
     </div>
@@ -830,51 +812,16 @@
     © 2025 Namitha Padigapati — Built from scratch
   </footer>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      var words = [
-        'Python & pandas',
-        'SQL & PostgreSQL',
-        'Tableau dashboards',
-        'Power BI reports',
-        'Machine Learning',
-        'ETL pipelines',
-        'Churn prediction',
-        'Fraud detection',
-        'NLP & spaCy',
-        'AWS & GCP',
-        'A/B Testing',
-        'Data storytelling'
-      ];
-      var wordIndex = 0;
-      var charIndex = 0;
-      var isDeleting = false;
-      var el = document.getElementById('typewriter');
-      if (!el) return;
 
-      function type() {
-        var current = words[wordIndex];
-        if (isDeleting) {
-          el.textContent = current.substring(0, charIndex - 1);
-          charIndex--;
-        } else {
-          el.textContent = current.substring(0, charIndex + 1);
-          charIndex++;
-        }
-        var speed = isDeleting ? 60 : 100;
-        if (!isDeleting && charIndex === current.length) {
-          speed = 1800;
-          isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-          isDeleting = false;
-          wordIndex = (wordIndex + 1) % words.length;
-          speed = 300;
-        }
-        setTimeout(type, speed);
-      }
-      setTimeout(type, 500);
-    });
-  </script>
-
-</body>
-</html>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    (function(){
+      var w=['Python & pandas','SQL & PostgreSQL','Tableau dashboards','Power BI reports','Machine Learning','ETL pipelines','Churn prediction','Fraud detection','NLP & spaCy','AWS & GCP','A/B Testing','Data storytelling'];
+      var wi=0,ci=0,del=false;
+      function run(){
+        var el=document.getElementById('tw');
+        if(!el){setTimeout(run,200);return;}
+        var word=w[wi];
+        el.textContent=del?word.slice(0,--ci):word.slice(0,++ci);
+        var spd=del?55:105;
+        if(!del&&ci===word.length){spd=1800;del=true;}
+        else if(del&&ci===0){del=false;w
